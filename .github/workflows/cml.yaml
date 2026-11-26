@@ -10,11 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: pip
+      # En la laptop (Windows) se usa el Python ya instalado: setup-python ejecuta un
+      # script .ps1 que la política de ejecución de PowerShell bloquea.
+      - name: Check Python
+        run: python --version
 
       - name: Install dependencies
         run: |
