@@ -7,11 +7,14 @@ on:
 jobs:
   run:
     runs-on: self-hosted
+    # La laptop bloquea los scripts de PowerShell (política de ejecución); cmd no se ve afectado.
+    defaults:
+      run:
+        shell: cmd
     steps:
       - uses: actions/checkout@v4
 
-      # En la laptop (Windows) se usa el Python ya instalado: setup-python ejecuta un
-      # script .ps1 que la política de ejecución de PowerShell bloquea.
+      # Se usa el Python ya instalado en la laptop (setup-python necesita PowerShell).
       - name: Check Python
         run: python --version
 
