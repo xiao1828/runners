@@ -1,0 +1,4 @@
+__pycache__/
+predicciones.png
+resultados.json
+modelo_lstm.keras

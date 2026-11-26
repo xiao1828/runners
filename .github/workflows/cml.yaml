@@ -32,4 +32,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: predicciones
-          path: predicciones.png
+          path: |
+            predicciones.png
+            resultados.json
+            modelo_lstm.keras
+          if-no-files-found: warn
